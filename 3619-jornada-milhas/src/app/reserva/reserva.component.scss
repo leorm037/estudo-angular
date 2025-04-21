@@ -1,0 +1,289 @@
+$primary-color: var(--Primaria, #6750a4);
+$gray: var(--Cinza, #49454f);
+$light-gray: var(--Cinza-soft, #f6f6f6);
+$surface-color: var(--Superficie1, #f7f2fa);
+$font-roboto: 'Roboto', sans-serif;
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    color: $primary-color;
+    gap: 20px;
+
+    @media (max-width: 991px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .summary-title {
+    font: 400 36px/122% $font-roboto;
+  }
+
+  .back-link-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+
+    .back-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: #6750a4;
+      margin-top: 6px;
+
+      &:hover {
+        color: #b19ee4;
+      }
+    }
+  }
+
+  .back-icon {
+    width: 24px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    margin-top: 32px;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+
+  .trip-details {
+    display: flex;
+    flex-direction: column;
+    width: 68%;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+
+    .trip-section {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background-color: $light-gray;
+      color: $gray;
+
+      .section-header {
+        display: flex;
+        gap: 8px;
+        font-weight: 400;
+        white-space: nowrap;
+
+        .material-icons {
+          font: 32px/100% 'Material Icons', -apple-system, $font-roboto, Helvetica, sans-serif;
+        }
+
+        .section-title {
+          flex: 1;
+          font: 28px/129% $font-roboto;
+        }
+      }
+
+      .section-info {
+        margin-top: 32px;
+        font: 400 16px/150% $font-roboto;
+      }
+
+      .trip-info {
+        display: flex;
+        gap: 16px;
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $gray;
+
+        @media (max-width: 991px) {
+          flex-wrap: wrap;
+        }
+
+        .trip-origin,
+        .baggage-info {
+          flex: 1;
+        }
+      }
+
+      .separator {
+        margin-top: 16px;
+        height: 1px;
+        background-color: #6750A4;
+      }
+
+      .options-prompt {
+        margin-top: 64px;
+        font: 500 16px/150% $font-roboto;
+        color: $primary-color;
+      }
+
+      .option {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        padding: 6px 8px;
+
+        .option-icon {
+          width: 24px;
+          object-fit: contain;
+          object-position: center;
+          margin: auto 0;
+        }
+
+        .option-button {
+          flex: 1;
+          font-family: $font-roboto;
+          background: none;
+          color: inherit;
+          cursor: pointer;
+          padding: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .summary {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    margin-left: 20px;
+    margin-top: 24px;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+
+    .summary-box {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border-radius: 24px;
+      background-color: $surface-color;
+      color: $gray;
+
+      .summary-image {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .separator {
+        margin-top: 16px;
+        height: 1px;
+        background-color: #6750A4;
+      }
+
+      .trip-summary {
+        margin-top: 24px;
+        font: 16px/24px $font-roboto;
+        color: $gray;
+      }
+
+      .passenger-info {
+        margin-top: 16px;
+        font: 16px/150% $font-roboto;
+      }
+
+      .final-cost-title,
+      .final-cost {
+        margin-top: 16px;
+      }
+
+      .final-cost-title {
+        font: 24px/133% $font-roboto;
+        color: $primary-color;
+      }
+
+      .final-cost {
+        text-align: center;
+        font: 32px $font-roboto;
+        color: $gray;
+      }
+
+      .payment-button {
+        margin-top: 24px;
+        padding: 10px 51px;
+        text-align: center;
+        font: 500 14px/143% $font-roboto;
+        border-radius: 100px;
+        border: none;
+        background-color: $primary-color;
+        color: var(--M3-sys-light-on-primary, #fff);
+        cursor: pointer;
+
+        &:disabled {
+          background-color: #cccccc;
+        }
+
+        @media (max-width: 991px) {
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+
+  .important-info {
+    width: 100%;
+    margin-top: 40px;
+    font: 400 16px/24px $font-roboto;
+    color: $gray;
+
+    .info-title {
+      font: 500 16px/150% $font-roboto;
+    }
+
+    .info-details {
+      margin-top: 16px;
+    }
+  }
+
+  .payment-options {
+    width: 100%;
+    margin-top: 64px;
+    font: 500 16px/150% $font-roboto;
+    color: $gray;
+
+    @media (max-width: 991px) {
+      margin-top: 40px;
+    }
+
+    .payment-options-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-right: 20px;
+      gap: 20px;
+
+      @media (max-width: 991px) {
+        flex-wrap: wrap;
+      }
+
+      .payment-logos {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .payment-discount {
+        margin: auto 0;
+        font: 400 16px/150% $font-roboto;
+      }
+    }
+  }
+}

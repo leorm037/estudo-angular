@@ -1,0 +1,155 @@
+$order-primary-color: #6750a4;
+$order-surface-color: #f7f2fa;
+$order-text-color: #49454f;
+$order-secondary-container-color: #e8def8;
+$order-on-secondary-container-color: #1d192b;
+
+.order-history {
+  padding-bottom: 80px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .title {
+      color: $order-primary-color;
+      font: 400 36px/122% Roboto, sans-serif;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .link-text {
+        color: $order-primary-color;
+        font: 500 16px/150% Roboto, sans-serif;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .order-container {
+    border-radius: 24px;
+    background-color: $order-surface-color;
+    margin-top: 24px;
+    padding: 24px;
+
+    .order-card {
+      display: flex;
+      gap: 20px;
+
+      .order-image {
+        width: 31%;
+        aspect-ratio: 1.41;
+        object-fit: cover;
+      }
+
+      .order-details {
+        display: flex;
+        flex-grow: 1;
+
+        .order-info {
+          width: 50%;
+
+          .order-title,
+          .order-dates,
+          .order-guests {
+            color: $order-text-color;
+            font: 16px/24px Roboto, sans-serif;
+            margin-bottom: 16px;
+          }
+
+          .order-title {
+            font: 22px/28px Roboto, sans-serif;
+          }
+        }
+
+        .order-price {
+          width: 50%;
+          text-align: center;
+
+          .price-label {
+            color: $order-primary-color;
+            font: 24px/133% Roboto, sans-serif;
+            margin-bottom: 8px;
+          }
+
+          .price-value {
+            font: 32px Roboto, sans-serif;
+          }
+        }
+      }
+
+      .order-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .btn {
+          border-radius: 100px;
+          font: 500 14px/143% Roboto, sans-serif;
+          padding: 10px 24px;
+          text-align: center;
+          cursor: pointer;
+
+          &.btn-outline {
+            border: 1px solid rgba(121, 116, 126, 1);
+            color: $order-primary-color;
+            background: transparent;
+          }
+
+          &.btn-secondary {
+            background-color: $order-secondary-container-color;
+            color: $order-on-secondary-container-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .order-history {
+    .header {
+      flex-wrap: wrap;
+    }
+
+    .order-container {
+      padding: 20px;
+
+      .order-card {
+        flex-direction: column;
+
+        .order-image {
+          width: 100%;
+          margin-top: 32px;
+        }
+
+        .order-details {
+          flex-direction: column;
+
+          .order-info,
+          .order-price {
+            width: 100%;
+          }
+
+          .order-price {
+            margin-top: 16px;
+          }
+        }
+
+        .order-actions {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

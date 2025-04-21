@@ -1,0 +1,77 @@
+$primary-color: #6750a4;
+$gray-color: #49454f;
+$background-color: #f6f6f6;
+
+.reservation-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  padding-bottom: 80px;
+
+    .header {
+      padding: 2px 20px;
+
+    .back-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 0;
+    }
+
+    .back-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .back-link {
+      cursor: pointer;
+      color: $primary-color;
+      font: 500 16px/150% Roboto, sans-serif;
+      text-decoration: none;
+
+      &:hover {
+        color: #b19ee4;
+      }
+    }
+  }
+
+  .confirmation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+
+    .confirmation-image {
+      width: 240px;
+      max-width: 100%;
+    }
+
+    .confirmation-title {
+      color: $primary-color;
+      text-align: center;
+      margin-top: 40px;
+      font: 400 36px/122% Roboto, sans-serif;
+    }
+
+    .confirmation-message {
+      color: $gray-color;
+      text-align: center;
+      margin-top: 16px;
+      font: 400 28px/36px Roboto, sans-serif;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .reservation-confirmation {
+    .confirmation-content {
+      margin-top: 40px;
+
+      .confirmation-title,
+      .confirmation-message {
+        max-width: 100%;
+      }
+    }
+  }
+}

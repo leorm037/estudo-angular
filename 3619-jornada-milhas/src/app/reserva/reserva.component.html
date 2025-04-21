@@ -1,0 +1,128 @@
+<app-banner
+  src="assets/imagens/banner-detalhes.png"
+  alt="Banner da tela de detalhe">
+</app-banner>
+
+
+<app-container>
+  <div class="page-container">
+    <header class="header">
+      <h1 class="summary-title">Resumo da Viagem</h1>
+      <div class="back-link-container">
+        <img loading="lazy" src="../../assets/icones/back-icon.svg" class="back-icon" alt="Back icon" />
+        <a appBackButton class="back-link">Voltar a Detalhes</a>
+      </div>
+    </header>
+    <form [formGroup]="form">
+      <main class="content">
+        <section class="trip-details">
+          <article class="trip-section">
+            <div class="section-header">
+              <span class="material-icons">flight</span>
+              <h2 class="section-title">Voo</h2>
+            </div>
+            <p class="section-info">3 adultos</p>
+            <div class="trip-info">
+              <div class="trip-origin">
+                <strong>Origem:</strong> Rio Branco <br />
+                <strong>Data de ida:</strong> 23/09/2025
+              </div>
+              <div class="baggage-info">
+                Bagagem: <br />
+                <span class="baggage-item">1 volume de mão</span> <br />
+                <span class="baggage-item">1 mala despachado</span>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div class="trip-info">
+              <div class="trip-origin">
+                <strong>Origem:</strong> Acre <br />
+                <strong>Data de ida:</strong> 30/09/2025
+              </div>
+              <div class="baggage-info">
+                Bagagem: <br />
+                <span class="baggage-item">1 volume de mão</span> <br />
+                <span class="baggage-item">1 mala despachado</span>
+              </div>
+            </div>
+            <p class="options-prompt">Selecione uma das opções:</p>
+            <app-radio-button-group formControlName="vooRadioSelection" [options]="vooRadioOptions"></app-radio-button-group>
+          </article>
+          <article class="trip-section">
+            <div class="section-header">
+              <span class="material-icons">hotel</span>
+              <h2 class="section-title">Acomodação</h2>
+            </div>
+            <div class="hotel-info">
+              <p><strong>Hotel:</strong> Acre Summer Stay</p>
+              <p><strong>Endereço:</strong> Rua Lua Cheia, 250, casa 100.</p>
+              <p class="hotel-feature">Café da manhã</p>
+              <p class="hotel-feature">Quarto duplo família</p>
+            </div>
+            <div class="separator"></div>
+            <p class="options-prompt">Selecione uma das opções:</p>
+            <app-radio-button-group formControlName="acomodacaoRadioSelection" [options]="acomodacaoRadioOptions"></app-radio-button-group>
+          </article>
+          <article class="trip-section">
+            <div class="section-header">
+              <span class="material-icons">car_rental</span>
+              <h2 class="section-title">Aluguel de carro</h2>
+            </div>
+            <div class="car-info">
+              <p><strong>Carro:</strong> Categoria B</p>
+              <p class="car-feature">Com ar condicionado</p>
+              <p class="car-feature">Manual</p>
+              <p class="car-feature">Seguro para acidentes</p>
+            </div>
+            <div class="separator"></div>
+            <p class="options-prompt">Selecione uma das opções:</p>
+            <app-radio-button-group formControlName="carroRadioSelection" [options]="carroRadioOptions"></app-radio-button-group>
+          </article>
+        </section>
+        <aside class="summary">
+          <div class="summary-box">
+            <img loading="lazy" src="../../assets/imagens/desert.png" class="summary-image" alt="Trip summary" />
+            <div class="trip-summary">
+              <p><strong>Data de ida:</strong> 23/09/2025</p>
+              <p><strong>Data de volta:</strong> 30/09/2025</p>
+              <p><strong>Origem:</strong> Rio Branco</p>
+              <p><strong>Estado de origem:</strong> Acre</p>
+            </div>
+            <p class="passenger-info">3 adultos</p>
+            <div class="separator"></div>
+            <p class="final-cost-title">Valor final</p>
+            <p class="final-cost">R$ 3769</p>
+            <button class="payment-button" [disabled]="form.invalid" (click)="onPagamentoClick()">Avançar para o pagamento</button>
+          </div>
+        </aside>
+      </main>
+    </form>
+
+    <div class="separator large-separator"></div>
+
+    <section class="important-info">
+      <h2 class="info-title">Informações importantes</h2>
+      <p class="info-details">
+        Os serviços no resumo ainda não estão reservados. <br />
+        A compra só será concluída após a confirmação de disponibilidade e de pagamento <br />
+        Preços estão em Real (R$) convertido ao câmbio do dia, sujeito à alteração.
+      </p>
+    </section>
+
+    <section class="payment-options">
+      <h2 class="payment-title">Formas de pagamento</h2>
+      <div class="payment-options-container">
+        <div class="payment-logos">
+          <img loading="lazy" src="../../assets/icones/boleto-icon.svg" alt="Boleto payment logo" />
+          <img loading="lazy" src="../../assets/icones/visa-icon.svg" alt="Visa payment logo" />
+          <img loading="lazy" src="../../assets/icones/pix-icon.svg" alt="Pix payment logo" />
+          <img loading="lazy" src="../../assets/icones/mastercard-icon.svg" alt="Another payment logo" />
+        </div>
+        <p class="payment-discount">
+          10% de desconto à vista no pix, 5% no boleto ou em até 12x no cartão.
+        </p>
+      </div>
+    </section>
+  </div>
+
+</app-container>

@@ -1,0 +1,16 @@
+<div class="radio-button-group"
+  [style.flex-direction]="flexDirection" [style.gap]="flexGap">
+  <div *ngFor="let option of options; let isFirst = first">
+    <img *ngIf="option.img" [src]="option.img.src" [alt]="option.img.alt" />
+    <label [class.disabled]="disabled">
+      <input type="radio"
+             [value]="option.value"
+             (change)="onSelect(option)"
+             [disabled]="disabled"
+             [attr.name]="option.value"
+             [attr.id]="option"
+             [checked]="option.id === radioOption.id">
+      {{ option.label }}
+    </label>
+  </div>
+</div>
